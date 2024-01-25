@@ -7,7 +7,7 @@
 <p> Eka Danuarta</p>
 <p> Ojan</p>
 <p> Farhan</p>
-<p> ZeeoneOfc </p>
+<p> BgsbotOfc </p>
 <p> ALL HUMAN</p>
 */
 __path = process.cwd()
@@ -34,8 +34,8 @@ var cheerio = require('cheerio');
 var request = require('request');
 var fs = require('fs');
 var router  = express.Router();
-var creator = 'ZeeoneOfc' // ubah jadi nama lu
-const listkey = ["Alphabot","Zeeone","ZeeoneOfc"]; // ubah apikey nya, tambah aja klo mau
+var creator = 'BgsbotOfc' // ubah jadi nama lu
+const listkey = ["Alphabot","Bgsbot","BgsbotOfc"]; // ubah apikey nya, tambah aja klo mau
 
 var { otakudesu, covid, ongoing, komiku, tebakgambar, surah, sholat, lirik, chara,wattpad, playstore, linkwa, pinterest ,igdl,igstory, igstalk,twitter,fbdown,youtube,ttdownloader} = require(__path + '/lib/scrape.js');
 var { color, bgcolor } = require(__path + '/lib/color.js');
@@ -160,7 +160,7 @@ router.get('/cecan/china', async (req, res, next) => {
           var apikey = req.query.apikey
        	if(!apikey) return res.json(loghandler.apikey)
         if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/china.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Bgsbotofc/Asupan/main/cecan/china.json`))
         .then(response => response.json())
         .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
@@ -181,7 +181,7 @@ router.get('/cecan/vietnam', async (req, res, next) => {
           var apikey = req.query.apikey
        	if(!apikey) return res.json(loghandler.apikey)
         if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/vietnam.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Bgsbotofc/Asupan/main/cecan/vietnam.json`))
         .then(response => response.json())
         .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
@@ -202,7 +202,7 @@ router.get('/cecan/thailand', async (req, res, next) => {
           var apikey = req.query.apikey
        	if(!apikey) return res.json(loghandler.apikey)
         if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/thailand.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Bgsbotofc/Asupan/main/cecan/thailand.json`))
         .then(response => response.json())
         .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
@@ -223,7 +223,7 @@ router.get('/cecan/indonesia', async (req, res, next) => {
           var apikey = req.query.apikey
        	if(!apikey) return res.json(loghandler.apikey)
         if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/indonesia.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Bgsbotofc/Asupan/main/cecan/indonesia.json`))
         .then(response => response.json())
         .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
@@ -244,7 +244,7 @@ router.get('/cecan/korea', async (req, res, next) => {
           var apikey = req.query.apikey
        	if(!apikey) return res.json(loghandler.apikey)
         if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/korea.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Bgsbotofc/Asupan/main/cecan/korea.json`))
         .then(response => response.json())
         .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
@@ -265,7 +265,7 @@ router.get('/cecan/japan', async (req, res, next) => {
           var apikey = req.query.apikey
        	if(!apikey) return res.json(loghandler.apikey)
         if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/japan.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Bgsbotofc/Asupan/main/cecan/japan.json`))
         .then(response => response.json())
         .then(async data => {
         var result = data[Math.floor(Math.random() * data.length)];
@@ -286,14 +286,14 @@ router.get('/cecan/malaysia', async (req, res, next) => {
           var apikey = req.query.apikey
        	if(!apikey) return res.json(loghandler.apikey)
         if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/malaysia.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Bgsbotofc/Asupan/main/cecan/malaysia.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
         var buff = result.url
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  buff
              })
          })
@@ -611,12 +611,12 @@ router.get('/download/ytsearch', async (req, res, next) => {
        	if(!apikey) return res.json(loghandler.apikey)
        if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})
         if(listkey.includes(apikey)){
-       fetch(encodeURI(`https://yutub-api-zaahirr.herokuapp.com/search?q=${url}`))
+       fetch(encodeURI(`https://api.cafirexos.com/api/ytplay?text=${url}`))
         .then(response => response.json())
-        .then(data => {
-        var result = data;
+        .then(resultado => {
+        var result = resultado;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -639,7 +639,7 @@ router.get('/download/ytmp4', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -663,7 +663,7 @@ router.get('/lk21/search', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -685,7 +685,7 @@ router.get('/lk21/terbaru', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -707,7 +707,7 @@ router.get('/lk21/comingsoon', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -729,7 +729,7 @@ router.get('/lk21/tvseries', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -752,7 +752,7 @@ router.get('/lk21/year', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -775,7 +775,7 @@ router.get('/lk21/country', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -798,7 +798,7 @@ router.get('/lk21/genre', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -823,7 +823,7 @@ router.get('/filmapik/search', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -846,7 +846,7 @@ router.get('/filmapik/kategori', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -869,7 +869,7 @@ router.get('/filmapik/play', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -891,7 +891,7 @@ router.get('/filmapik/terbaru', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -916,7 +916,7 @@ router.get('/news/cnn', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -939,7 +939,7 @@ router.get('/news/cnbc', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -962,7 +962,7 @@ router.get('/news/republika', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -985,7 +985,7 @@ router.get('/news/tempo', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -1008,7 +1008,7 @@ router.get('/news/antara', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -1030,7 +1030,7 @@ router.get('/news/kumparan', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -2845,7 +2845,7 @@ router.get('/other/ghstalk', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
@@ -2868,7 +2868,7 @@ router.get('/other/repostalk', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Bgsbot',
                  result
              })
          })
